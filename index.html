@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası / Privacy Policy — Diyetik (Diet Decipher)</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #2e7d32;
+      --border: #e0e0e0;
+      --section-bg: #f5f8f5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 1.5rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--accent); }
+    header h1 { font-size: 1.6rem; color: var(--accent); margin-bottom: 0.3rem; }
+    header p { color: var(--muted); font-size: 0.9rem; }
+    .lang-nav { display: flex; justify-content: center; gap: 1rem; margin: 1rem 0; }
+    .lang-nav button {
+      padding: 0.5rem 1.5rem; border-radius: 4px; cursor: pointer;
+      font-weight: 600; font-size: 0.95rem;
+      border: 2px solid var(--accent); color: var(--accent);
+      background: transparent; transition: all 0.2s;
+    }
+    .lang-nav button:hover { background: var(--accent); color: #fff; }
+    .lang-nav button.active { background: var(--accent); color: #fff; }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+    section { margin-bottom: 2rem; }
+    h2 { font-size: 1.25rem; color: var(--accent); margin-bottom: 0.8rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.05rem; margin: 1rem 0 0.5rem; }
+    p, li { margin-bottom: 0.5rem; }
+    ul { padding-left: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.92rem; }
+    th, td { padding: 0.5rem 0.7rem; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+    th { background: var(--section-bg); font-weight: 600; white-space: nowrap; }
+    a { color: var(--accent); }
+    footer { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      header h1 { font-size: 1.3rem; }
+      table { font-size: 0.82rem; }
+      th, td { padding: 0.35rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Diyetik / Diet Decipher</h1>
+    <p>Gizlilik Politikası / Privacy Policy</p>
+    <nav class="lang-nav">
+      <button id="btn-tr" class="active" onclick="switchLang('tr')">Türkçe</button>
+      <button id="btn-en" onclick="switchLang('en')">English</button>
+    </nav>
+  </header>
+
+  <!-- ==================== TÜRKÇE ==================== -->
+  <div id="lang-tr" class="lang-section active">
+
+    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Son güncelleme: 2026-03-07</p>
+
+    <section>
+      <h2>1. Araştırma Bilgileri</h2>
+      <p>Bu uygulama, <strong>İzmir Kâtip Çelebi Üniversitesi Beslenme ve Diyetetik Bölümü</strong> bünyesinde TÜSEB projesi kapsamında yürütülmektedir.</p>
+      <p><strong>İletişim:</strong> Prof. Dr. Gülşah KANER TOHTAK — <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+    </section>
+
+    <section>
+      <h2>2. Uygulamanın Amacı</h2>
+      <p>Diyetik (Diet Decipher), Türk adölesanlarda android tabanlı bir besin tüketim sıklığı anketi geliştirmek, geçerlilik ve güvenilirliğini değerlendirmek ve Türkiye Beslenme Rehberi 2022'ye uygun bir diyet kalite indeksi oluşturmak amacı ile geliştirilmiştir. Toplanan veriler yalnızca bilimsel araştırma amacı ile kullanılmaktadır.</p>
+    </section>
+
+    <section>
+      <h2>3. Toplanan Veriler</h2>
+
+      <h3>3.1 Hesap Bilgileri (Firebase Authentication)</h3>
+      <p>Oturum açma işlemi sırasında Firebase Authentication tarafından yönetilen bilgiler:</p>
+      <ul>
+        <li>Benzersiz kullanıcı kimliği (uid)</li>
+        <li>E-posta adresi</li>
+        <li>Görünen ad (display name)</li>
+        <li>Profil fotoğrafı URL'si (Google hesabından sağlanan; cihazda saklanmaz)</li>
+        <li>Kimlik doğrulama yöntemi (Google veya e-posta/şifre)</li>
+      </ul>
+
+      <h3>3.2 Profil Bilgileri (Firestore)</h3>
+      <p>Kullanıcı kaydı sırasında bulutta (Firestore) saklanan bilgiler:</p>
+      <table>
+        <tr><th>Veri</th><th>Açıklama</th></tr>
+        <tr><td>Telefon numarası</td><td>+90 ile başlayan Türk cep telefonu numarası</td></tr>
+        <tr><td>Görünen ad</td><td>Kullanıcı tarafından girilen veya Google hesabından alınan ad</td></tr>
+        <tr><td>E-posta</td><td>Oturum açma e-posta adresi</td></tr>
+        <tr><td>Gizlilik politikası onayı</td><td>Onay durumu ve zaman damgası</td></tr>
+        <tr><td>Kayıt tamamlanma durumu</td><td>Kullanıcı kayıt sürecinin tamamlanıp tamamlanmadığı</td></tr>
+        <tr><td>Oturum meta verileri</td><td>Oturum kimlik numarası, anket tanımlayıcısı, anket sürümü, oluşturma/güncelleme zamanları</td></tr>
+      </table>
+
+      <h3>3.3 Anket Yanıtları (Firestore)</h3>
+      <p>Her besin için kaydedilen veriler:</p>
+      <ul>
+        <li>Tüketim sıklığı seçimi (frequencyOptionId)</li>
+        <li>Porsiyon boyutu seçimi (portionOptionId)</li>
+        <li>Güncelleme zaman damgası</li>
+        <li>Anket sürümü</li>
+      </ul>
+
+      <h3>3.4 Sunucu Tarafından Hesaplanan Veriler</h3>
+      <p>Aşağıdaki alanlar Firebase sunucu tetikleyicileri tarafından otomatik olarak hesaplanır; kullanıcı tarafından doğrudan girilmez:</p>
+      <ul>
+        <li>Tamamlanan yanıt sayısı ve kategori ilerleme durumu</li>
+        <li>Toplam besin sayısı ve anket tamamlanma durumu</li>
+        <li>Anket tamamlanma oranı</li>
+        <li>Son yanıt zaman damgası</li>
+        <li>İlerleme güncelleme zaman damgası</li>
+      </ul>
+
+      <h3>3.5 Yerel Cihaz Depolaması</h3>
+      <p>Anket yanıtları, çevrimdışı erişim için cihazda yerel olarak (Room veritabanı) saklanır. Oturum açıkken yanıtlar otomatik olarak bulut sunucuya (Firestore) senkronize edilir.</p>
+
+      <h3>3.6 Otomatik Olarak Toplanan Teknik Veriler</h3>
+      <p>Firebase Crashlytics, uygulama hatalarını tespit etmek amacıyla aşağıdaki bilgileri otomatik olarak toplar:</p>
+      <ul>
+        <li>Çökme raporları ve yığın izleri (stack traces)</li>
+        <li>Cihaz modeli, işletim sistemi sürümü</li>
+        <li>Uygulama sürümü</li>
+        <li>Crashlytics kullanıcı kimliği</li>
+      </ul>
+
+      <h3>3.7 Toplanmayan Veriler</h3>
+      <p>Bu uygulama aşağıdaki verileri <strong>toplamamaktadır</strong>:</p>
+      <ul>
+        <li>Konum bilgisi</li>
+        <li>Rehber/kişi listesi</li>
+        <li>Cihazdan fotoğraf veya medya dosyaları (cihaz galerisine/kamerasına erişim yapılmaz)</li>
+        <li>Reklam veya analitik takip verileri</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Verilere Kimler Erişebilir</h2>
+      <ul>
+        <li><strong>Katılımcı:</strong> Kendi profil bilgilerine ve anket yanıtlarına erişebilir ve CSV olarak dışarı aktarabilir.</li>
+        <li><strong>Yetkili Araştırmacılar:</strong> Araştırma ekibi içindeki yetkili araştırmacılar, bilimsel analiz amacıyla katılımcı verilerine (ad, telefon numarası ve anket yanıtları dahil) erişebilir ve bunları dışarı aktarabilir.</li>
+        <li><strong>Firebase/Google (Veri İşleyici):</strong> Firebase Authentication, Cloud Firestore ve Crashlytics hizmetleri Google altyapısı üzerinde çalışır. Google bu verileri kimlik doğrulama, depolama ve hata raporlama amacıyla hizmet sağlayıcı olarak işler.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Veri Saklama ve Aktarımı</h2>
+      <p>Veriler Firebase Cloud Firestore (Google Cloud altyapısı) üzerinde ve kullanıcının cihazında yerel olarak saklanır. Firebase hizmetleri verileri Google'ın küresel sunucu altyapısında işleyebilir.</p>
+    </section>
+
+    <section>
+      <h2>6. Veri Saklama Süresi</h2>
+      <p>Veriler araştırma projesi süresince saklanır. Kişisel verilerinizin silinmesini aşağıdaki iletişim adresi üzerinden talep edebilirsiniz.</p>
+    </section>
+
+    <section>
+      <h2>7. Haklarınız</h2>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:</p>
+      <ul>
+        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+        <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+        <li>Kişisel verilerinizin düzeltilmesini veya silinmesini talep etme</li>
+        <li>Verilerinizin bir kopyasını talep etme</li>
+      </ul>
+      <p>Bu haklarınızı kullanmak için <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a> adresine e-posta gönderebilirsiniz.</p>
+    </section>
+
+    <section>
+      <h2>8. Çocuklar ve Adölesanlar</h2>
+      <p>Bu uygulama, üniversite araştırma çalışması kapsamında adölesan katılımcılarla kullanılmak üzere tasarlanmıştır.</p>
+    </section>
+
+    <section>
+      <h2>9. Üçüncü Taraf Hizmetler</h2>
+      <table>
+        <tr><th>Hizmet</th><th>Sağlayıcı</th><th>Amaç</th></tr>
+        <tr><td>Firebase Authentication</td><td>Google LLC</td><td>Kullanıcı kimlik doğrulaması</td></tr>
+        <tr><td>Cloud Firestore</td><td>Google LLC</td><td>Profil ve anket verisi depolaması</td></tr>
+        <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Çökme raporları ve hata tespiti</td></tr>
+      </table>
+      <p>Bu hizmetlerin gizlilik politikaları için: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Gizlilik Bilgileri</a></p>
+    </section>
+
+    <section>
+      <h2>10. Değişiklikler</h2>
+      <p>Bu gizlilik politikası güncellenebilir. Değişiklikler bu sayfada yayınlanacak ve "Son güncelleme" tarihi revize edilecektir.</p>
+    </section>
+
+    <section>
+      <h2>11. İletişim</h2>
+      <p>Sorularınız veya talepleriniz için:</p>
+      <p><strong>Prof. Dr. Gülşah KANER TOHTAK</strong><br>
+      İzmir Kâtip Çelebi Üniversitesi, Beslenme ve Diyetetik Bölümü<br>
+      E-posta: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+    </section>
+
+  </div>
+
+  <!-- ==================== ENGLISH ==================== -->
+  <div id="lang-en" class="lang-section">
+
+    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Last updated: 2026-03-07</p>
+
+    <section>
+      <h2>1. About This Research</h2>
+      <p>This application is developed as part of a TUSEB research project at the <strong>Department of Nutrition and Dietetics, Izmir Katip Celebi University</strong>.</p>
+      <p><strong>Contact:</strong> Prof. Dr. Gulsah KANER TOHTAK — <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+    </section>
+
+    <section>
+      <h2>2. Purpose of the Application</h2>
+      <p>Diyetik (Diet Decipher) is developed to create an Android-based food frequency questionnaire for Turkish adolescents, evaluate its validity and reliability, and establish a diet quality index aligned with the Turkey Nutrition Guide 2022. All collected data is used solely for scientific research purposes.</p>
+    </section>
+
+    <section>
+      <h2>3. Data We Collect</h2>
+
+      <h3>3.1 Account Information (Firebase Authentication)</h3>
+      <p>Information managed by Firebase Authentication during sign-in:</p>
+      <ul>
+        <li>Unique user identifier (uid)</li>
+        <li>Email address</li>
+        <li>Display name</li>
+        <li>Profile photo URL (provided by Google account; not stored on device)</li>
+        <li>Authentication method (Google or email/password)</li>
+      </ul>
+
+      <h3>3.2 Profile Information (Firestore)</h3>
+      <p>Information stored in the cloud (Firestore) during registration:</p>
+      <table>
+        <tr><th>Data</th><th>Description</th></tr>
+        <tr><td>Phone number</td><td>Turkish mobile phone number starting with +90</td></tr>
+        <tr><td>Display name</td><td>Name entered by the user or obtained from Google account</td></tr>
+        <tr><td>Email</td><td>Sign-in email address</td></tr>
+        <tr><td>Privacy policy consent</td><td>Consent status and timestamp</td></tr>
+        <tr><td>Onboarding completion status</td><td>Whether the user has completed the registration process</td></tr>
+        <tr><td>Session metadata</td><td>Session ID, survey identifier, survey version, creation/update timestamps</td></tr>
+      </table>
+
+      <h3>3.3 Survey Responses (Firestore)</h3>
+      <p>Data recorded for each food item:</p>
+      <ul>
+        <li>Consumption frequency selection (frequencyOptionId)</li>
+        <li>Portion size selection (portionOptionId)</li>
+        <li>Update timestamp</li>
+        <li>Survey version</li>
+      </ul>
+
+      <h3>3.4 Server-Computed Data</h3>
+      <p>The following fields are automatically calculated by Firebase server triggers and are not directly entered by the user:</p>
+      <ul>
+        <li>Completed answer count and category progress</li>
+        <li>Total food count and survey completion status</li>
+        <li>Survey completion ratio</li>
+        <li>Last answer timestamp</li>
+        <li>Progress update timestamp</li>
+      </ul>
+
+      <h3>3.5 Local Device Storage</h3>
+      <p>Survey responses are stored locally on the device (Room database) for offline access. When signed in, responses are automatically synchronized to the cloud server (Firestore).</p>
+
+      <h3>3.6 Automatically Collected Technical Data</h3>
+      <p>Firebase Crashlytics automatically collects the following information to detect application errors:</p>
+      <ul>
+        <li>Crash reports and stack traces</li>
+        <li>Device model, operating system version</li>
+        <li>Application version</li>
+        <li>Crashlytics user identifier</li>
+      </ul>
+
+      <h3>3.7 Data We Do Not Collect</h3>
+      <p>This application does <strong>not</strong> collect:</p>
+      <ul>
+        <li>Location data</li>
+        <li>Contacts</li>
+        <li>Device photos or media files (no access to device gallery/camera)</li>
+        <li>Advertising or analytics tracking data</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Who Can Access Your Data</h2>
+      <ul>
+        <li><strong>Participant:</strong> You can access your own profile information and survey responses, and export them as CSV.</li>
+        <li><strong>Authorized Researchers:</strong> Authorized researchers within the study team can access and export participant data (including name, phone number, and survey responses) for scientific analysis.</li>
+        <li><strong>Firebase/Google (Data Processor):</strong> Firebase Authentication, Cloud Firestore, and Crashlytics services operate on Google infrastructure. Google processes this data as a service provider for authentication, storage, and crash reporting.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Data Storage and Transfer</h2>
+      <p>Data is stored on Firebase Cloud Firestore (Google Cloud infrastructure) and locally on the user's device. Firebase services may process data across Google's global server infrastructure.</p>
+    </section>
+
+    <section>
+      <h2>6. Data Retention</h2>
+      <p>Data is retained for the duration of the research project. You may request deletion of your personal data by contacting us at the address below.</p>
+    </section>
+
+    <section>
+      <h2>7. Your Rights</h2>
+      <p>Under the Turkish Personal Data Protection Law (KVKK, Law No. 6698), you have the following rights:</p>
+      <ul>
+        <li>Learn whether your personal data is being processed</li>
+        <li>Learn the purpose of processing and whether it is used in accordance with its purpose</li>
+        <li>Request correction or deletion of your personal data</li>
+        <li>Request a copy of your data</li>
+      </ul>
+      <p>To exercise these rights, please email <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a>.</p>
+    </section>
+
+    <section>
+      <h2>8. Children and Adolescents</h2>
+      <p>This application is designed for use with adolescent participants as part of a university research study.</p>
+    </section>
+
+    <section>
+      <h2>9. Third-Party Services</h2>
+      <table>
+        <tr><th>Service</th><th>Provider</th><th>Purpose</th></tr>
+        <tr><td>Firebase Authentication</td><td>Google LLC</td><td>User authentication</td></tr>
+        <tr><td>Cloud Firestore</td><td>Google LLC</td><td>Profile and survey data storage</td></tr>
+        <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Crash reports and error detection</td></tr>
+      </table>
+      <p>For these services' privacy policies, see: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a></p>
+    </section>
+
+    <section>
+      <h2>10. Changes</h2>
+      <p>This privacy policy may be updated. Changes will be published on this page and the "Last updated" date will be revised.</p>
+    </section>
+
+    <section>
+      <h2>11. Contact</h2>
+      <p>For questions or requests:</p>
+      <p><strong>Prof. Dr. Gulsah KANER TOHTAK</strong><br>
+      Izmir Katip Celebi University, Department of Nutrition and Dietetics<br>
+      Email: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 İzmir Kâtip Çelebi Üniversitesi — Diyetik (Diet Decipher)</p>
+  </footer>
+
+</div>
+
+<script>
+function switchLang(lang) {
+  document.getElementById('lang-tr').classList.toggle('active', lang === 'tr');
+  document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'tr' ? 'tr' : 'en';
+}
+</script>
+</body>
+</html>
