@@ -70,143 +70,98 @@
   <!-- ==================== TÜRKÇE ==================== -->
   <div id="lang-tr" class="lang-section active">
 
-    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Son güncelleme: 2026-03-07</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Son güncelleme: 2026-03-08</p>
 
     <section>
-      <h2>1. Araştırma Bilgileri</h2>
-      <p>Bu uygulama, <strong>İzmir Kâtip Çelebi Üniversitesi Beslenme ve Diyetetik Bölümü</strong> bünyesinde TÜSEB projesi kapsamında yürütülmektedir.</p>
-      <p><strong>İletişim:</strong> Prof. Dr. Gülşah KANER TOHTAK — <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+      <h2>1. Araştırma ve İletişim</h2>
+      <p>Bu uygulama, <strong>İzmir Kâtip Çelebi Üniversitesi Beslenme ve Diyetetik Bölümü</strong> bünyesindeki araştırma çalışması için geliştirilmiştir.</p>
+      <p>Gizlilik, veri talepleri veya hesap silme başvuruları için: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
     </section>
 
     <section>
-      <h2>2. Uygulamanın Amacı</h2>
-      <p>Diyetik (Diet Decipher), Türk adölesanlarda android tabanlı bir besin tüketim sıklığı anketi geliştirmek, geçerlilik ve güvenilirliğini değerlendirmek ve Türkiye Beslenme Rehberi 2022'ye uygun bir diyet kalite indeksi oluşturmak amacı ile geliştirilmiştir. Toplanan veriler yalnızca bilimsel araştırma amacı ile kullanılmaktadır.</p>
+      <h2>2. Toplanan Veriler</h2>
+      <p>Uygulama aşağıdaki veri kategorilerini toplar ve işler:</p>
+      <ul>
+        <li><strong>Hesap ve iletişim bilgileri:</strong> ad, e-posta adresi, telefon numarası</li>
+        <li><strong>Anket verileri:</strong> besin tüketim sıklığı ve porsiyon yanıtları ile ilerleme durumu</li>
+        <li><strong>Teknik hata verileri:</strong> çökme raporları, cihaz türü, işletim sistemi ve uygulama sürümü</li>
+        <li><strong>Yerel cihaz verisi:</strong> çevrimdışı kullanım için cihazda saklanan anket yanıtları</li>
+      </ul>
+      <p>Uygulama konum, kişi listesi, fotoğraf galerisi veya reklam takibi verileri toplamaz.</p>
     </section>
 
     <section>
-      <h2>3. Toplanan Veriler</h2>
-
-      <h3>3.1 Hesap Bilgileri (Firebase Authentication)</h3>
-      <p>Oturum açma işlemi sırasında Firebase Authentication tarafından yönetilen bilgiler:</p>
+      <h2>3. Verileri Kullanma Amaçlarımız</h2>
       <ul>
-        <li>Benzersiz kullanıcı kimliği (uid)</li>
-        <li>E-posta adresi</li>
-        <li>Görünen ad (display name)</li>
-        <li>Profil fotoğrafı URL'si (Google hesabından sağlanan; cihazda saklanmaz)</li>
-        <li>Kimlik doğrulama yöntemi (Google veya e-posta/şifre)</li>
-      </ul>
-
-      <h3>3.2 Profil Bilgileri (Firestore)</h3>
-      <p>Kullanıcı kaydı sırasında bulutta (Firestore) saklanan bilgiler:</p>
-      <table>
-        <tr><th>Veri</th><th>Açıklama</th></tr>
-        <tr><td>Telefon numarası</td><td>+90 ile başlayan Türk cep telefonu numarası</td></tr>
-        <tr><td>Görünen ad</td><td>Kullanıcı tarafından girilen veya Google hesabından alınan ad</td></tr>
-        <tr><td>E-posta</td><td>Oturum açma e-posta adresi</td></tr>
-        <tr><td>Gizlilik politikası onayı</td><td>Onay durumu ve zaman damgası</td></tr>
-        <tr><td>Kayıt tamamlanma durumu</td><td>Kullanıcı kayıt sürecinin tamamlanıp tamamlanmadığı</td></tr>
-        <tr><td>Oturum meta verileri</td><td>Oturum kimlik numarası, anket tanımlayıcısı, anket sürümü, oluşturma/güncelleme zamanları</td></tr>
-      </table>
-
-      <h3>3.3 Anket Yanıtları (Firestore)</h3>
-      <p>Her besin için kaydedilen veriler:</p>
-      <ul>
-        <li>Tüketim sıklığı seçimi (frequencyOptionId)</li>
-        <li>Porsiyon boyutu seçimi (portionOptionId)</li>
-        <li>Güncelleme zaman damgası</li>
-        <li>Anket sürümü</li>
-      </ul>
-
-      <h3>3.4 Sunucu Tarafından Hesaplanan Veriler</h3>
-      <p>Aşağıdaki alanlar Firebase sunucu tetikleyicileri tarafından otomatik olarak hesaplanır; kullanıcı tarafından doğrudan girilmez:</p>
-      <ul>
-        <li>Tamamlanan yanıt sayısı ve kategori ilerleme durumu</li>
-        <li>Toplam besin sayısı ve anket tamamlanma durumu</li>
-        <li>Anket tamamlanma oranı</li>
-        <li>Son yanıt zaman damgası</li>
-        <li>İlerleme güncelleme zaman damgası</li>
-      </ul>
-
-      <h3>3.5 Yerel Cihaz Depolaması</h3>
-      <p>Anket yanıtları, çevrimdışı erişim için cihazda yerel olarak (Room veritabanı) saklanır. Oturum açıkken yanıtlar otomatik olarak bulut sunucuya (Firestore) senkronize edilir.</p>
-
-      <h3>3.6 Otomatik Olarak Toplanan Teknik Veriler</h3>
-      <p>Firebase Crashlytics, uygulama hatalarını tespit etmek amacıyla aşağıdaki bilgileri otomatik olarak toplar:</p>
-      <ul>
-        <li>Çökme raporları ve yığın izleri (stack traces)</li>
-        <li>Cihaz modeli, işletim sistemi sürümü</li>
-        <li>Uygulama sürümü</li>
-        <li>Crashlytics kullanıcı kimliği</li>
-      </ul>
-
-      <h3>3.7 Toplanmayan Veriler</h3>
-      <p>Bu uygulama aşağıdaki verileri <strong>toplamamaktadır</strong>:</p>
-      <ul>
-        <li>Konum bilgisi</li>
-        <li>Rehber/kişi listesi</li>
-        <li>Cihazdan fotoğraf veya medya dosyaları (cihaz galerisine/kamerasına erişim yapılmaz)</li>
-        <li>Reklam veya analitik takip verileri</li>
+        <li>Hesabınızı oluşturmak ve kimlik doğrulaması sağlamak</li>
+        <li>Profil bilgilerinizi ve anket yanıtlarınızı kaydetmek ve senkronize etmek</li>
+        <li>Bilimsel araştırma ve değerlendirme süreçlerini yürütmek</li>
+        <li>Uygulama hatalarını izlemek ve hizmet kalitesini iyileştirmek</li>
+        <li>Yasal, etik ve araştırma yükümlülüklerini yerine getirmek</li>
       </ul>
     </section>
 
     <section>
       <h2>4. Verilere Kimler Erişebilir</h2>
       <ul>
-        <li><strong>Katılımcı:</strong> Kendi profil bilgilerine ve anket yanıtlarına erişebilir ve CSV olarak dışarı aktarabilir.</li>
-        <li><strong>Yetkili Araştırmacılar:</strong> Araştırma ekibi içindeki yetkili araştırmacılar, bilimsel analiz amacıyla katılımcı verilerine (ad, telefon numarası ve anket yanıtları dahil) erişebilir ve bunları dışarı aktarabilir.</li>
-        <li><strong>Firebase/Google (Veri İşleyici):</strong> Firebase Authentication, Cloud Firestore ve Crashlytics hizmetleri Google altyapısı üzerinde çalışır. Google bu verileri kimlik doğrulama, depolama ve hata raporlama amacıyla hizmet sağlayıcı olarak işler.</li>
+        <li><strong>Siz:</strong> kendi profil bilgilerinize ve anket yanıtlarınıza uygulama içinden erişebilirsiniz.</li>
+        <li><strong>Yetkili araştırma ekibi:</strong> araştırma analizi amacıyla gerekli kullanıcı verilerine erişebilir.</li>
+        <li><strong>Hizmet sağlayıcılar:</strong> Firebase Authentication, Cloud Firestore ve Firebase Crashlytics hizmetleri Google altyapısı üzerinde çalışır.</li>
       </ul>
+      <p>Verileriniz reklam amacıyla satılmaz veya paylaşılmaz.</p>
     </section>
 
     <section>
-      <h2>5. Veri Saklama ve Aktarımı</h2>
-      <p>Veriler Firebase Cloud Firestore (Google Cloud altyapısı) üzerinde ve kullanıcının cihazında yerel olarak saklanır. Firebase hizmetleri verileri Google'ın küresel sunucu altyapısında işleyebilir.</p>
+      <h2>5. Güvenlik</h2>
+      <p>Veriler Firebase/Google altyapısında işlenir ve aktarım sırasında şifrelenir. Uygulama erişimi kimlik doğrulaması ile korunur; bulut verilerine erişim uygulama kuralları ve yetkilendirme kontrolleri ile sınırlandırılır.</p>
     </section>
 
     <section>
-      <h2>6. Veri Saklama Süresi</h2>
-      <p>Veriler araştırma projesi süresince saklanır. Kişisel verilerinizin silinmesini aşağıdaki iletişim adresi üzerinden talep edebilirsiniz.</p>
+      <h2>6. Saklama ve Silme</h2>
+      <p>Veriler araştırma süresi boyunca veya siz silme talep edene kadar saklanır. Uygulama içinden hesabınızı silebilir ya da aşağıdaki iletişim adresinden silme talebinde bulunabilirsiniz.</p>
     </section>
 
     <section>
       <h2>7. Haklarınız</h2>
-      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:</p>
-      <ul>
-        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
-        <li>İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme</li>
-        <li>Kişisel verilerinizin düzeltilmesini veya silinmesini talep etme</li>
-        <li>Verilerinizin bir kopyasını talep etme</li>
-      </ul>
+      <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında verilerinize erişme, düzeltme, silme ve kopyasını talep etme haklarına sahipsiniz.</p>
       <p>Bu haklarınızı kullanmak için <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a> adresine e-posta gönderebilirsiniz.</p>
     </section>
 
     <section>
-      <h2>8. Çocuklar ve Adölesanlar</h2>
-      <p>Bu uygulama, üniversite araştırma çalışması kapsamında adölesan katılımcılarla kullanılmak üzere tasarlanmıştır.</p>
-    </section>
-
-    <section>
-      <h2>9. Üçüncü Taraf Hizmetler</h2>
+      <h2>8. Üçüncü Taraf Hizmetler</h2>
       <table>
         <tr><th>Hizmet</th><th>Sağlayıcı</th><th>Amaç</th></tr>
         <tr><td>Firebase Authentication</td><td>Google LLC</td><td>Kullanıcı kimlik doğrulaması</td></tr>
         <tr><td>Cloud Firestore</td><td>Google LLC</td><td>Profil ve anket verisi depolaması</td></tr>
         <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Çökme raporları ve hata tespiti</td></tr>
       </table>
-      <p>Bu hizmetlerin gizlilik politikaları için: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Gizlilik Bilgileri</a></p>
+      <p>Daha fazla bilgi için: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Gizlilik Bilgileri</a></p>
+    </section>
+
+    <section id="hesap-silme">
+      <h2>9. Hesap Silme</h2>
+      <p>Hesabınızı ve ilişkili verilerinizi kalıcı olarak silebilirsiniz. Bu işlem geri alınamaz.</p>
+
+      <h3>Uygulama İçinden Silme</h3>
+      <p>Uygulamayı açın → sağ üstteki üç nokta menüsünden <strong>Profil</strong>'e gidin → <strong>Hesabı Sil</strong> düğmesine basın → onay adımlarını takip edin.</p>
+
+      <h3>Uygulama Dışından Silme Talebi</h3>
+      <p>Uygulamaya erişemiyorsanız, kayıtlı e-posta adresinizi belirterek aşağıdaki adrese silme talebi gönderebilirsiniz:</p>
+      <p><a href="mailto:gulsah.kaner@ikcu.edu.tr?subject=DietDecipher%20Hesap%20Silme%20Talebi">gulsah.kaner@ikcu.edu.tr</a></p>
+      <p>E-posta ile yapılan silme taleplerinde kimlik doğrulaması istenebilir. İşlemin tamamlanması ek süre gerektirirse size bilgi verilir.</p>
+
+      <h3>Silinecek Veriler</h3>
+      <ul>
+        <li>Profil bilgileriniz</li>
+        <li>Anket yanıtlarınız</li>
+        <li>Hesap kimlik doğrulama kaydınız</li>
+      </ul>
+      <p>Kimlik doğrulama kaydınız hemen silinir; Firestore verileri Firebase Delete User Data uzantısı tarafından otomatik olarak temizlenir.</p>
     </section>
 
     <section>
       <h2>10. Değişiklikler</h2>
-      <p>Bu gizlilik politikası güncellenebilir. Değişiklikler bu sayfada yayınlanacak ve "Son güncelleme" tarihi revize edilecektir.</p>
-    </section>
-
-    <section>
-      <h2>11. İletişim</h2>
-      <p>Sorularınız veya talepleriniz için:</p>
-      <p><strong>Prof. Dr. Gülşah KANER TOHTAK</strong><br>
-      İzmir Kâtip Çelebi Üniversitesi, Beslenme ve Diyetetik Bölümü<br>
-      E-posta: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+      <p>Bu gizlilik politikası güncellenebilir. Değişiklikler bu sayfada yayınlanır ve "Son güncelleme" tarihi yenilenir.</p>
     </section>
 
   </div>
@@ -214,143 +169,98 @@
   <!-- ==================== ENGLISH ==================== -->
   <div id="lang-en" class="lang-section">
 
-    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Last updated: 2026-03-07</p>
+    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-bottom:2rem;">Last updated: 2026-03-08</p>
 
     <section>
-      <h2>1. About This Research</h2>
-      <p>This application is developed as part of a TUSEB research project at the <strong>Department of Nutrition and Dietetics, Izmir Katip Celebi University</strong>.</p>
-      <p><strong>Contact:</strong> Prof. Dr. Gulsah KANER TOHTAK — <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
+      <h2>1. Research and Contact</h2>
+      <p>This application is provided for a research study conducted by the <strong>Department of Nutrition and Dietetics, Izmir Katip Celebi University</strong>.</p>
+      <p>For privacy questions, data requests, or account deletion requests: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
     </section>
 
     <section>
-      <h2>2. Purpose of the Application</h2>
-      <p>Diyetik (Diet Decipher) is developed to create an Android-based food frequency questionnaire for Turkish adolescents, evaluate its validity and reliability, and establish a diet quality index aligned with the Turkey Nutrition Guide 2022. All collected data is used solely for scientific research purposes.</p>
+      <h2>2. Data We Collect</h2>
+      <p>The app collects and processes the following categories of data:</p>
+      <ul>
+        <li><strong>Account and contact data:</strong> name, email address, phone number</li>
+        <li><strong>Survey data:</strong> food frequency responses, portion selections, and completion/progress information</li>
+        <li><strong>Technical error data:</strong> crash reports, device type, operating system, and app version</li>
+        <li><strong>Local device data:</strong> survey responses stored on the device for offline use</li>
+      </ul>
+      <p>The app does not collect location, contacts, photo library data, or advertising/tracking data.</p>
     </section>
 
     <section>
-      <h2>3. Data We Collect</h2>
-
-      <h3>3.1 Account Information (Firebase Authentication)</h3>
-      <p>Information managed by Firebase Authentication during sign-in:</p>
+      <h2>3. How We Use Data</h2>
       <ul>
-        <li>Unique user identifier (uid)</li>
-        <li>Email address</li>
-        <li>Display name</li>
-        <li>Profile photo URL (provided by Google account; not stored on device)</li>
-        <li>Authentication method (Google or email/password)</li>
-      </ul>
-
-      <h3>3.2 Profile Information (Firestore)</h3>
-      <p>Information stored in the cloud (Firestore) during registration:</p>
-      <table>
-        <tr><th>Data</th><th>Description</th></tr>
-        <tr><td>Phone number</td><td>Turkish mobile phone number starting with +90</td></tr>
-        <tr><td>Display name</td><td>Name entered by the user or obtained from Google account</td></tr>
-        <tr><td>Email</td><td>Sign-in email address</td></tr>
-        <tr><td>Privacy policy consent</td><td>Consent status and timestamp</td></tr>
-        <tr><td>Onboarding completion status</td><td>Whether the user has completed the registration process</td></tr>
-        <tr><td>Session metadata</td><td>Session ID, survey identifier, survey version, creation/update timestamps</td></tr>
-      </table>
-
-      <h3>3.3 Survey Responses (Firestore)</h3>
-      <p>Data recorded for each food item:</p>
-      <ul>
-        <li>Consumption frequency selection (frequencyOptionId)</li>
-        <li>Portion size selection (portionOptionId)</li>
-        <li>Update timestamp</li>
-        <li>Survey version</li>
-      </ul>
-
-      <h3>3.4 Server-Computed Data</h3>
-      <p>The following fields are automatically calculated by Firebase server triggers and are not directly entered by the user:</p>
-      <ul>
-        <li>Completed answer count and category progress</li>
-        <li>Total food count and survey completion status</li>
-        <li>Survey completion ratio</li>
-        <li>Last answer timestamp</li>
-        <li>Progress update timestamp</li>
-      </ul>
-
-      <h3>3.5 Local Device Storage</h3>
-      <p>Survey responses are stored locally on the device (Room database) for offline access. When signed in, responses are automatically synchronized to the cloud server (Firestore).</p>
-
-      <h3>3.6 Automatically Collected Technical Data</h3>
-      <p>Firebase Crashlytics automatically collects the following information to detect application errors:</p>
-      <ul>
-        <li>Crash reports and stack traces</li>
-        <li>Device model, operating system version</li>
-        <li>Application version</li>
-        <li>Crashlytics user identifier</li>
-      </ul>
-
-      <h3>3.7 Data We Do Not Collect</h3>
-      <p>This application does <strong>not</strong> collect:</p>
-      <ul>
-        <li>Location data</li>
-        <li>Contacts</li>
-        <li>Device photos or media files (no access to device gallery/camera)</li>
-        <li>Advertising or analytics tracking data</li>
+        <li>To create your account and authenticate you</li>
+        <li>To store and synchronize your profile and survey responses</li>
+        <li>To conduct the research study and related analysis</li>
+        <li>To monitor crashes and improve app reliability</li>
+        <li>To comply with legal, ethical, and research obligations</li>
       </ul>
     </section>
 
     <section>
       <h2>4. Who Can Access Your Data</h2>
       <ul>
-        <li><strong>Participant:</strong> You can access your own profile information and survey responses, and export them as CSV.</li>
-        <li><strong>Authorized Researchers:</strong> Authorized researchers within the study team can access and export participant data (including name, phone number, and survey responses) for scientific analysis.</li>
-        <li><strong>Firebase/Google (Data Processor):</strong> Firebase Authentication, Cloud Firestore, and Crashlytics services operate on Google infrastructure. Google processes this data as a service provider for authentication, storage, and crash reporting.</li>
+        <li><strong>You:</strong> you can access your own profile information and survey responses inside the app.</li>
+        <li><strong>Authorized research staff:</strong> may access necessary participant data for research analysis.</li>
+        <li><strong>Service providers:</strong> Firebase Authentication, Cloud Firestore, and Firebase Crashlytics operate on Google infrastructure.</li>
       </ul>
+      <p>Your data is not sold or shared for advertising purposes.</p>
     </section>
 
     <section>
-      <h2>5. Data Storage and Transfer</h2>
-      <p>Data is stored on Firebase Cloud Firestore (Google Cloud infrastructure) and locally on the user's device. Firebase services may process data across Google's global server infrastructure.</p>
+      <h2>5. Security</h2>
+      <p>Data is processed on Firebase/Google infrastructure and encrypted in transit. Access to app data is protected by authentication, and cloud access is limited by application authorization and backend access controls.</p>
     </section>
 
     <section>
-      <h2>6. Data Retention</h2>
-      <p>Data is retained for the duration of the research project. You may request deletion of your personal data by contacting us at the address below.</p>
+      <h2>6. Retention and Deletion</h2>
+      <p>Data is retained for the duration of the research project or until you request deletion. You can delete your account in the app or request deletion using the contact address below.</p>
     </section>
 
     <section>
       <h2>7. Your Rights</h2>
-      <p>Under the Turkish Personal Data Protection Law (KVKK, Law No. 6698), you have the following rights:</p>
-      <ul>
-        <li>Learn whether your personal data is being processed</li>
-        <li>Learn the purpose of processing and whether it is used in accordance with its purpose</li>
-        <li>Request correction or deletion of your personal data</li>
-        <li>Request a copy of your data</li>
-      </ul>
-      <p>To exercise these rights, please email <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a>.</p>
+      <p>Under the Turkish Personal Data Protection Law (KVKK, Law No. 6698), you may request access, correction, deletion, or a copy of your personal data.</p>
+      <p>To exercise these rights, email <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a>.</p>
     </section>
 
     <section>
-      <h2>8. Children and Adolescents</h2>
-      <p>This application is designed for use with adolescent participants as part of a university research study.</p>
-    </section>
-
-    <section>
-      <h2>9. Third-Party Services</h2>
+      <h2>8. Third-Party Services</h2>
       <table>
         <tr><th>Service</th><th>Provider</th><th>Purpose</th></tr>
         <tr><td>Firebase Authentication</td><td>Google LLC</td><td>User authentication</td></tr>
         <tr><td>Cloud Firestore</td><td>Google LLC</td><td>Profile and survey data storage</td></tr>
         <tr><td>Firebase Crashlytics</td><td>Google LLC</td><td>Crash reports and error detection</td></tr>
       </table>
-      <p>For these services' privacy policies, see: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a></p>
+      <p>For more information, see: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Information</a></p>
+    </section>
+
+    <section id="account-deletion">
+      <h2>9. Account Deletion</h2>
+      <p>You can permanently delete your account and associated data. This action is irreversible.</p>
+
+      <h3>Deleting from Within the App</h3>
+      <p>Open the app → tap the three-dot menu in the top right → go to <strong>Profile</strong> → tap <strong>Delete Account</strong> → follow the confirmation steps.</p>
+
+      <h3>Requesting Deletion Outside the App</h3>
+      <p>If you cannot access the app, you may request deletion by emailing the address below and identifying your registered email address:</p>
+      <p><a href="mailto:gulsah.kaner@ikcu.edu.tr?subject=DietDecipher%20Account%20Deletion%20Request">gulsah.kaner@ikcu.edu.tr</a></p>
+      <p>Email deletion requests may require identity verification. If additional time is needed to complete the request, you will be informed.</p>
+
+      <h3>Data That Will Be Deleted</h3>
+      <ul>
+        <li>Your profile information</li>
+        <li>Your survey responses</li>
+        <li>Your account authentication record</li>
+      </ul>
+      <p>Your authentication record is deleted immediately; Firestore data is automatically cleaned up by the Firebase Delete User Data extension.</p>
     </section>
 
     <section>
       <h2>10. Changes</h2>
       <p>This privacy policy may be updated. Changes will be published on this page and the "Last updated" date will be revised.</p>
-    </section>
-
-    <section>
-      <h2>11. Contact</h2>
-      <p>For questions or requests:</p>
-      <p><strong>Prof. Dr. Gulsah KANER TOHTAK</strong><br>
-      Izmir Katip Celebi University, Department of Nutrition and Dietetics<br>
-      Email: <a href="mailto:gulsah.kaner@ikcu.edu.tr">gulsah.kaner@ikcu.edu.tr</a></p>
     </section>
 
   </div>
